@@ -24,6 +24,5 @@ format:
   html:
     theme: pulse
     toc: false
-
 editor:
   mode: source
