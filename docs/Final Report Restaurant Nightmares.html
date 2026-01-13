@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Caroline Guirand, Tyler Lara, Haley Vargas, Matthew Kelsall">
+
+<title>Final Report Restaurant Nightmares – STA 9750 Submission Material</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5657dfa6c17a855b02079790714f0f49.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+
+<script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+
+<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+
+
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">STA 9750 Submission Material</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./mp01.html"> 
+<span class="menu-text">Mini-Project #01</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./mp02.html"> 
+<span class="menu-text">Mini-Project #02</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./mp03.html"> 
+<span class="menu-text">Mini-Project #03</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./mp04.html"> 
+<span class="menu-text">Mini-Project #04</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Final-Individual-Report.html"> 
+<span class="menu-text">Final Individual Report</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Final Report Restaurant Nightmares</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Caroline Guirand, Tyler Lara, Haley Vargas, Matthew Kelsall </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<ol type="1">
+<li>Motivations and Importance of Question</li>
+</ol>
+<p>Our communities are critical to our lives as residents of New York City’s diverse boroughs. Each neighborhood has its own unique character, population, and resources, which in turn impact the experiences and well-being of its residents. As New Yorkers, we want to live in neighborhoods that are healthy, vibrant, and thriving. One key indicator of a healthy community is food safety, since restaurants play a critical role in public health and day-to-day life. Restaurants not only provide nutrition but also contribute to social life, employment, and the local economy.</p>
+<p>This project addresses a crucial question for New Yorkers: How does restaurant quality relate to community health across New York City’s neighborhoods? Understanding how poor restaurant quality, whether due to low food quality, a high prevalence of fast food, or frequent critical health violations, may affect our community health is important. Poor restaurant quality could be linked to higher rates of diet-related conditions like diabetes, obesity, and other chronic illnesses, which have long-term implications for individuals and the healthcare system.</p>
+<p>Economic factors may also play a role in restaurant quality. Neighborhoods with higher poverty rates or greater rent burdens could face more challenges in supporting high-quality restaurant options. This could lead to a higher prevalence of fast food or restaurants with poor health inspection results. Exploring these patterns can help identify whether economic stress in a community is linked to poorer food quality choices and, in turn, public health outcomes.</p>
+<p>By examining these relationships, we aim to provide insights that inform public health policies, guide interventions, and support access to safe and nutritious food across all neighborhoods. Understanding these patterns can empower communities and policymakers to take actions that promote safer, healthier, and more vibrant communities for all New Yorkers.</p>
+<ol start="2" type="1">
+<li><p>Briefly how the specific analyses help to address the motivating question</p></li>
+<li><p>The choice of data used, including discussion of any limitations</p></li>
+</ol>
+<p>In order to find out the answers to the question, the team used 3 datasets from different sources. The first of these datasets is New York City Community Health Profiles from the <a href="https://www.nyc.gov/site/doh/data/data-publications/profiles.page">NYC Health Webstie</a>. This dataset was made in 2022, and is a collective sum of data from different areas of government and public organizations. These include the American Community Survey (ACS), NYC DOHMH,the NYC Department of Education, the NYC Mayor’s Office for Economic Opportunity, and the NYC Housing and Vacancy Survey (HVS). This excel file is very comprehensive, with 6 different “pages” and the first 3 pages providing technical and metadata. The last 3 pages are community health profiles, the cause of premature death, and ranking of cancer data. However, this study will only be using the community health profiles for analyzing due to the last 2 pages (premature death and cancer data) do not having data related to the study. The community health profiles dataset contains 59 community districts making up NYC, and over 50 different measures of public health. These measures follow under demographics, economic or societal conditions, access to health, and health outcomes. This data becomes bloated Though, it has a total of 196 columns because some measures include confidence intervals, notes about the measure, or comparing if the district is higher or lower than to the average in NYC.</p>
+<p>This study will only be using columns that relate to the question. Through this, there are only a few that remain important to the study. These include columns like poverty, hypertension, obesity, diabetes, and self-reported health. As seen below, all of these values are in percentages. There are some limitations to this data, especially as it has multiple different sources that likely used different methods to obtain the data. For example, there is a self-reported health column which is unreliable because people could underestimate or overestimate their health condition. As well, because this data is turned into a sum or average per district, analyzing cannot go further in depth. Finally, the data sources all come from different years from 2014 to 2022. Using this data with other datasets means possibly comparing measures from 2016 to ones in 2025, thus leading to inaccurate findings.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="datatables html-widget html-fill-item" id="htmlwidget-6f3ea196137d631cba4f" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-6f3ea196137d631cba4f">{"x":{"filter":"none","vertical":false,"data":[["Financial District","Greenwich Village and Soho","Lower East Side and Chinatown","Clinton and Chelsea","Midtown","Stuyvesant Town and Turtle Bay","Upper West Side","Upper East Side","Morningside Heights and Hamilton Heights","Central Harlem","East Harlem","Washington Heights and Inwood","Mott Haven and Melrose","Hunts Point and Longwood","Morrisania and Crotona","Highbridge and Concourse","Fordham and University Heights","Belmont and East Tremont","Kingsbridge Heights and Bedford","Riverdale and Fieldston","Parkchester and Soundview","Throgs Neck and Co-op City","Morris Park and Bronxdale","Williamsbridge and Baychester","Greenpoint and Williamsburg","Fort Greene and Brooklyn Heights","Bedford Stuyvesant","Bushwick","East New York and Starrett City","Park Slope and Carroll Gardens","Sunset Park","Crown Heights and Prospect Heights","South Crown Heights and Lefferts Gardens","Bay Ridge and Dyker Heights","Bensonhurst","Borough Park","Coney Island","Flatbush and Midwood","Sheepshead Bay","Brownsville","East Flatbush","Flatlands and Canarsie","Long Island City and Astoria","Woodside and Sunnyside","Jackson Heights","Elmhurst and Corona","Ridgewood and Maspeth","Rego Park and Forest Hills","Flushing and Whitestone","Hillcrest and Fresh Meadows","Kew Gardens and Woodhaven","South Ozone Park and Howard Beach","Bayside and Little Neck","Jamaica and Hollis","Queens Village","Rockaway and Broad Channel","St. George and Stapleton","South Beach and Willowbrook","Tottenville and Great Kills"],["7.60%","7.60%","22.00%","11.20%","11.20%","8.70%","9.50%","6.10%","19.90%","20.50%","23.40%","18.20%","31.50%","31.50%","30.90%","33.60%","35.40%","30.90%","28.70%","18.60%","29.00%","15.80%","19.90%","21.90%","16.20%","12.30%","21.20%","25.00%","27.70%","9.50%","23.30%","20.50%","20.50%","16.70%","23.00%","26.90%","24.40%","19.40%","16.50%","28.50%","16.30%","13.90%","16.10%","14.30%","22.30%","20.70%","15.40%","13.60%","23.70%","18.20%","19.20%","15.00%","13.10%","16.90%","10.70%","17.20%","19.70%","12.20%","11.50%"],["4.00%","4.00%","6.00%","4.00%","4.00%","3.00%","4.00%","3.00%","6.00%","9.00%","9.00%","8.00%","12.00%","12.00%","13.00%","10.00%","12.00%","13.00%","11.00%","7.00%","9.00%","7.00%","9.00%","9.00%","5.00%","6.00%","8.00%","6.00%","7.00%","5.00%","5.00%","6.00%","7.00%","5.00%","6.00%","5.00%","8.00%","6.00%","6.00%","12.00%","6.00%","5.00%","5.00%","4.00%","5.00%","4.00%","4.00%","4.00%","4.00%","8.00%","6.00%","7.00%","4.00%","8.00%","6.00%","8.00%","5.00%","5.00%","4.00%"],["35.00%","35.00%","49.00%","39.00%","39.00%","41.00%","36.00%","40.00%","50.00%","45.00%","47.00%","50.00%","58.00%","58.00%","58.00%","59.00%","62.00%","58.00%","61.00%","52.00%","55.00%","46.00%","56.00%","59.00%","45.00%","39.00%","50.00%","54.00%","54.00%","35.00%","52.00%","48.00%","51.00%","47.00%","55.00%","64.00%","58.00%","54.00%","51.00%","60.00%","53.00%","47.00%","44.00%","47.00%","60.00%","59.00%","45.00%","56.00%","46.00%","47.00%","53.00%","53.00%","46.00%","52.00%","51.00%","49.00%","52.00%","47.00%","39.00%"],["7.86%","7.86%","13.78%","12.14%","12.14%","10.38%","21.11%","10.27%","22.82%","34.86%","30.25%","25.98%","35.75%","35.75%","40.87%","28.16%","40.20%","40.87%","32.51%","23.27%","40.28%","27.70%","31.94%","32.58%","18.26%","12.38%","32.04%","15.35%","30.59%","16.65%","19.02%","18.98%","29.98%","17.87%","16.25%","23.85%","28.49%","27.64%","23.26%","40.60%","34.43%","40.72%","20.48%","17.08%","25.01%","25.91%","27.73%","18.73%","11.94%","22.62%","26.35%","34.54%","10.97%","24.82%","40.13%","30.78%","33.53%","24.04%","28.26%"],["20.06%","20.06%","22.49%","12.81%","12.81%","19.22%","20.32%","16.16%","31.00%","31.02%","28.94%","31.33%","35.31%","35.31%","34.71%","35.07%","37.22%","34.71%","33.88%","26.21%","33.69%","27.39%","40.49%","29.10%","24.57%","16.34%","31.97%","27.42%","37.25%","25.37%","25.41%","19.91%","32.94%","24.21%","25.61%","21.56%","31.55%","22.12%","27.07%","39.62%","31.67%","35.69%","23.90%","21.21%","28.45%","23.57%","24.05%","24.63%","21.86%","28.93%","26.79%","28.57%","24.01%","25.15%","25.78%","31.48%","23.19%","22.78%","22.00%"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Name<\/th>\n      <th>Poverty<\/th>\n      <th>Unemployment<\/th>\n      <th>Rent Burden<\/th>\n      <th>Obesity<\/th>\n      <th>Hypertension<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":5,"scrollX":true,"columnDefs":[{"name":"Name","targets":0},{"name":"Poverty","targets":1},{"name":"Unemployment","targets":2},{"name":"Rent Burden","targets":3},{"name":"Obesity","targets":4},{"name":"Hypertension","targets":5}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>The next dataset is from the <a href="https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j/about_data">Department of Health and Mental Hygiene (DOHMH)</a>. It contains every violation citation given out from 2015 to 2025, including letter grades, violation descriptions, location, and inspection dates. It has a total of 27 columns and 20,998 restaurants recorded, with each row being a restaurant citation. Overall, the data is complete and consistent, though the DOHMH notes that because the data is compiled from multiple data systems there might be some illogical values. As well, the DOHMH states that “establishments with the inspection date of 1/1/1990 are new and have not received an inspection”. It is important to keep both of these statements in mind to accurately analyze this dataset. There is another limitation present, namely the lack of a district column. Although this leads to some difficulties, there is a semi-solution of using zip codes to create the district. The main issue with this is that not all zip codes correctly make up a district, meaning analyzing by the district level means some values like the number of restaurants in that district might be inflated or be deflated compared to the actual number.</p>
+<p>The final dataset is from NYC’s <a href="https://data.cityofnewyork.us/Social-Services/food-poisoning/gjkf-etq5/about_data">311 Food Poisoning service request records</a>. It contains site‑specific complaints residents submit to 311 when they believe an illness resulted from food consumed at an establishment or event. These records are part of a citywide feed that is automatically refreshed and covers requests from 2010 to the present, meaning it will be easier to use data from the same year as the previous datasets. In terms of structure, the table includes multiple 311 fields that are useful for analysis and joining. This includes Created and Closed Date, Complaint Type, Location Type, Address, Borough, and Status. For our question, these complaints serve as an approximate indicator of suspected food‑borne illness at the neighborhood level.</p>
+<p>This dataset also has multiple limitations. First, 311 submissions are self‑reported and may reflect perception or recall bias. For example, the food item or venue people identify might not be the actual source of the illness. NYC311 explicitly notes that while reports are investigated, not every establishment is inspected before its next scheduled inspection, so a complaint does not guarantee an immediate site visit. Additionally, This dataset has a similar issue to the previous one, where there is no district column. Now, there is the “City” column that ranges from indicating New York to a borough like flushing but it does not include district. So we can also group these semi-correctly into districts by using ZIP codes in order to compare with the Community Health Profile dataset.</p>
+<ol start="4" type="1">
+<li><p>Visualization of most important findings</p></li>
+<li><p>Relation to Prior Work</p></li>
+<li><p>Potential Next Steps</p></li>
+</ol>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/tylerml71\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
