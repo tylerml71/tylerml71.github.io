@@ -3,21 +3,21 @@ project:
   output-dir: docs
 
 website:
-  title: "STA 9750 Submission Material"
-  description: "Course Projects for STA 9750 at Baruch College"
-  site-url: "https://tylermlara.com"
+  title: "Projects"
+  description: "My R projects"
+  site-url: "https://tylerml71.github.io"
   navbar:
     left:
-      - text: "Mini-Project #01"
-        href: mp01.qmd
-      - text: "Mini-Project #02"
-        href: mp02.qmd
-      - text: "Mini-Project #03"
-        href: mp03.qmd
-      - text: "Mini-Project #04"
-        href: mp04.qmd
-      - text: "Final Individual Report"
-        href: Final-Individual-Report.qmd
+      - text: "Netflix"
+        href: netflix.qmd
+      - text: "Housing"
+        href: housing.qmd
+      - text: "NYC Trees"
+        href: nytrees.qmd
+      - text: "Fact Checking"
+        href: facts.qmd
+      - text: "Individual Report for Group Project"
+        href: individual-report.qmd
     background: primary
     search: false
 format:
